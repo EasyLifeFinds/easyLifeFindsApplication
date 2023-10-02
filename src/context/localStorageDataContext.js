@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const LocalStorageDataContext = createContext()
 
@@ -10,18 +10,14 @@ export function LocalStorageDataContextProvider({ children }) {
 
     const [localStorageData, setLocalStorageData] = useState(() => {
         if (localStorage.getItem('EasyLifeFindsUserWishListDataBase') === null) {
+            console.log("LocalStorage is Null")
             localStorage.setItem('EasyLifeFindsUserWishListDataBase', JSON.stringify([]))
         }
         return JSON.parse(localStorage.getItem('EasyLifeFindsUserWishListDataBase'))
     })
 
-    useEffect(() => {
-        console.log("Use Effect in Local Storage context running.....")
-        localStorage.setItem('EasyLifeFindsUserWishListDataBase', JSON.stringify([...new Set(localStorageData)]))
-    }, [localStorageData])
-
     function updateLocalStorageData(updatedLocalDataBase) {
-        console.log("Update Local Storage Data running....")
+        localStorage.setItem('EasyLifeFindsUserWishListDataBase', JSON.stringify(localStorageData))
         setLocalStorageData(updatedLocalDataBase)
     }
 
