@@ -4,7 +4,7 @@ import FiltersList from "./filtersList"
 import Product from "./product"
 import { useLocalStorageDataContext } from "../context/localStorageDataContext"
 import { useNavigate } from "react-router-dom"
-import  WishListNavButton  from "./wishListButton"
+import WishListNavButton  from "./wishListNavigationButton"
 
 export default function ProductList() {
 
@@ -49,6 +49,7 @@ export default function ProductList() {
                     We found {fireBaseDataState.length} products
                 </div>
             </div>
+            <WishListNavButton />
             <div>
                 <ul className="grid md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-4 lg:gap-4 lg:m-2 ">
                     {
