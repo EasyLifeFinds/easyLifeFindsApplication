@@ -1,26 +1,19 @@
 import { useEffect, useState } from "react"
 import { useFireBaseDataContext } from "../context/fireBaseDataContext"
+import { useLocalStorageDataContext } from "../context/localStorageDataContext"
 import FiltersList from "./filtersList"
 import Product from "./product"
-import { useLocalStorageDataContext } from "../context/localStorageDataContext"
-import { useNavigate } from "react-router-dom"
 import WishListNavButton  from "./wishListNavigationButton"
 
 export default function ProductList() {
 
     let fireBaseData = useFireBaseDataContext()
-    const navigate = useNavigate()
-
 
     const [fireBaseDataState, setFireBaseDataState] = useState([])
     const [localStorageData, updateLocalStorageData] = useLocalStorageDataContext()
 
-
-
     useEffect(() => {
         setFireBaseDataState(fireBaseData)
-        // let filteredArray = fireBaseData.filter(obj => localStorageData.includes(obj))
-        // console.log("Filtered Array -- > ", filteredArray)
         let filteredArray = []
         localStorageData.forEach(element => {
             let tempArray = fireBaseData.filter(ev => ev.id != element.id)
@@ -39,8 +32,6 @@ export default function ProductList() {
         setFireBaseDataState(fireBaseDataFiltered)
     }
 
-
-
     return (
         <div>
             <FiltersList filterButton={filterButton} clearFilter={clearFilter} />
@@ -51,7 +42,7 @@ export default function ProductList() {
             </div>
             <WishListNavButton />
             <div>
-                <ul className="grid md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-4 lg:gap-4 lg:m-2 ">
+                <ul className="grid md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-4 lg:gap-2 lg:m-2 ">
                     {
                         fireBaseDataState.map(data => (<li key={data.id}> <Product product={data} /> </li>))
                     }
