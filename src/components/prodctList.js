@@ -35,7 +35,7 @@ export default function ProductList() {
     return (
         <div>
             <FiltersList filterButton={filterButton} clearFilter={clearFilter} />
-            <div className="flex justify-center m-2 font-light text-lg">
+            <div className="flex justify-end m-2 font-light text-xs">
                 <div>
                     We found {fireBaseDataState.length} products
                 </div>
