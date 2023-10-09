@@ -1,6 +1,9 @@
 import { useRef, useState } from "react"
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../data/Data"
 
-export default function SellerSignUpForm({ printFormDetails }) {
+
+export default function SellerSignUpForm() {
 
     const name = [
         "dwayne johnson",
@@ -21,6 +24,10 @@ export default function SellerSignUpForm({ printFormDetails }) {
         return name[Math.floor(Math.random() * name.length)]
     })
 
+    async function addUserForNewLetterToFireStore(obj) {
+        await addDoc(collection(db, "usersNewsLetter"), obj)
+        closeSignUpForm()
+    }
     let email = useRef("")
     let firstName = useRef("")
     let secondName = useRef("")
@@ -30,10 +37,8 @@ export default function SellerSignUpForm({ printFormDetails }) {
         document.getElementById("listerSignupForm").classList.add("hidden")
     }
 
-    function sellerSignUpFormSubmitted(ev) {
-        ev.preventDefault()
-        console.log(email.current.value, firstName.current.value, secondName.current.value)
-        printFormDetails({ listerEmail: email.current.value, listerFirstName: firstName.current.value, listerSecondName: secondName.current.value })
+    function sellerSignUpFormSubmitted() {
+        addUserForNewLetterToFireStore({ listerEmail: email.current.value, listerFirstName: firstName.current.value, listerSecondName: secondName.current.value })
     }
     return (
         <div>

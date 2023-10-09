@@ -18,7 +18,6 @@ const fireBaseConfiguration = {
         storageBucket: "amazinfinds-4a0c0.appspot.com",
         messagingSenderId: "1078843691576",
         appId: "1:1078843691576:web:b0d1fd9d9cba8e71f68ccd"
-    
 }
 
 const app = initializeApp(fireBaseConfiguration)
