@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { collection, addDoc } from "firebase/firestore";
+import { collection, setDoc, doc } from "firebase/firestore";
 import { db } from "../data/Data"
 
 
@@ -25,9 +25,20 @@ export default function SellerSignUpForm() {
     })
 
     async function addUserForNewLetterToFireStore(obj) {
-        await addDoc(collection(db, "usersNewsLetter"), obj)
-        closeSignUpForm()
+        await setDoc(doc(collection(db, "usersNewsLetter")),
+            obj
+        )
+            .then((suc) => {
+                alert("Success")
+                document.getElementById("listerSignupForm").classList.add("hidden")
+                return true
+            })
+            .catch((err) => {
+                alert("Failed")
+                return false
+            })
     }
+
     let email = useRef("")
     let firstName = useRef("")
     let secondName = useRef("")
@@ -37,21 +48,23 @@ export default function SellerSignUpForm() {
         document.getElementById("listerSignupForm").classList.add("hidden")
     }
 
-    function sellerSignUpFormSubmitted() {
+    function sellerSignUpFormSubmitted(ev) {
+        ev.preventDefault()
         addUserForNewLetterToFireStore({ listerEmail: email.current.value, listerFirstName: firstName.current.value, listerSecondName: secondName.current.value })
     }
+
     return (
         <div>
             <form onSubmit={sellerSignUpFormSubmitted}>
                 <div>
-                    <input type="email" ref={email} className="required:border-red-500 placeholder-slate-400 border border-slate-600 p-1 m-1 sm:w-[98%]" placeholder={`${formName.split(" ").join("_")}@gmail.com`} />
+                    <input type="email" ref={email} required className="placeholder-slate-400 border border-slate-600 p-1 m-1 sm:w-[98%]" placeholder={`${formName.split(" ").join("_")}@gmail.com`} />
                 </div>
                 <div className="sm:flex sm:justify-between">
                     <div>
-                        <input type="text" ref={firstName} className="required:border-red-500 placeholder-slate-400 border border-slate-600 p-1 m-1" placeholder={formName.split(" ")[0]} />
+                        <input type="text" ref={firstName} className="placeholder-slate-400 border border-slate-600 p-1 m-1" placeholder={formName.split(" ")[0]} />
                     </div>
                     <div>
-                        <input type="text" ref={secondName} className="required:border-red-500 placeholder-slate-400 border border-slate-600 p-1 m-1" placeholder={formName.split(" ")[1]} />
+                        <input type="text" ref={secondName} className="placeholder-slate-400 border border-slate-600 p-1 m-1" placeholder={formName.split(" ")[1]} />
                     </div>
                 </div>
                 <div className="flex justify-around mt-1">
