@@ -3,12 +3,14 @@ import { useFireBaseDataContext } from "../context/fireBaseDataContext"
 import { useLocalStorageDataContext } from "../context/localStorageDataContext"
 import FiltersList from "./filtersList"
 import Product from "./product"
-import WishListNavButton  from "./wishListNavigationButton"
+import WishListNavButton from "./wishListNavigationButton"
+import DisplayFullProductDetails from "./displayFullProductDetails"
 
 export default function ProductList() {
 
     let fireBaseData = useFireBaseDataContext()
 
+    const [fullProductDetails, setFullProductDetails] = useState({})
     const [fireBaseDataState, setFireBaseDataState] = useState([])
     const [localStorageData, updateLocalStorageData] = useLocalStorageDataContext()
 
@@ -19,8 +21,6 @@ export default function ProductList() {
             let tempArray = fireBaseData.filter(ev => ev.id != element.id)
             filteredArray.push(...tempArray)
         });
-        console.log("Filtered Array -- > ", [...new Set(filteredArray)])
-
     }, [fireBaseData])
 
     function clearFilter() {
@@ -32,12 +32,13 @@ export default function ProductList() {
         setFireBaseDataState(fireBaseDataFiltered)
     }
 
+
     return (
         <div>
             <FiltersList filterButton={filterButton} clearFilter={clearFilter} />
-            <div className="flex justify-end m-2 font-light text-xs">
+            <div className="flex justify-end mx-2 font-light text-xs">
                 <div>
-                    We found {fireBaseDataState.length} products
+                    There are {fireBaseDataState.length} products
                 </div>
             </div>
             <WishListNavButton />

@@ -6,9 +6,9 @@ export default function WishListNavButton() {
 
     return (
         <div>
-            <div className="bg-[#396B31] px-5 py-1 mx-5 rounded-lg hover:-translate-y-1 fixed bottom-5 right-5">
+            <div className="bg-[#396B31] px-4 py-1 mx-1 rounded-lg hover:-translate-y-1 fixed bottom-5 right-5">
                 <button onClick={() => { navigate('wishlist') }}>
-                    <LiaBookmark className="text-4xl text-white" />
+                    <LiaBookmark className="text-lg lg:text-3xl text-white" />
                 </button>
             </div>
         </div>

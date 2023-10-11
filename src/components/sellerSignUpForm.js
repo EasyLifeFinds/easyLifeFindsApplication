@@ -55,6 +55,9 @@ export default function SellerSignUpForm() {
 
     return (
         <div>
+            <div className="text-lg font-light text-center text-[#396B31]">
+                Sign Up for newsletter
+            </div>
             <form onSubmit={sellerSignUpFormSubmitted}>
                 <div>
                     <input type="email" ref={email} required className="placeholder-slate-400 border border-slate-600 p-1 m-1 sm:w-[98%]" placeholder={`${formName.split(" ").join("_")}@gmail.com`} />
@@ -68,8 +71,8 @@ export default function SellerSignUpForm() {
                     </div>
                 </div>
                 <div className="flex justify-around mt-1">
-                    <input type="submit" className="bg-slate-800 text-white px-2" value="submit" />
-                    <button className="bg-slate-600 text-white px-2" onClick={closeSignUpForm}>cancel</button>
+                    <input type="submit" className="bg-[#396B31] text-white px-2" value="submit" />
+                    <button className="bg-slate-400 text-white px-2" onClick={closeSignUpForm}>cancel</button>
                 </div>
             </form>
         </div>
