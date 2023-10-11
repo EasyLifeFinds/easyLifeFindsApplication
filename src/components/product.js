@@ -2,9 +2,8 @@ import { useRef, Suspense } from "react"
 import { useLocalStorageDataContext } from "../context/localStorageDataContext"
 import { RxInfoCircled } from "react-icons/rx";
 import Loader from "./loader"
-import DisplayFullProductDetails from "./displayFullProductDetails";
 
-export default function Product({ product }) {
+export default function Product({ product, showProductDetails }) {
 
     let [localStorageData, updateLocalStorageData] = useLocalStorageDataContext()
 
@@ -20,19 +19,13 @@ export default function Product({ product }) {
         updateLocalStorageData(tempLocalStorage)
     }
 
-    function showFullProductDetails(id) {
-        console.log("Id -->", id)
-        document.getElementById(id).classList.remove("opacity-0")
-    }
-
-
     return (
         <>
-            <div className="sm:text-xs p-2 border m-2" data-id={product.id}>
-                <div className="flex justify-end cursor-pointer" onClick={() => { showFullProductDetails(product.id) }}>
-                    <RxInfoCircled className="text-[#396B31] -translate-y-1 translate-x-1 text-sm" />
+            <div className="sm:text-xs p-2 border m-2 z-10">
+                <div className="flex justify-end" >
+                    <RxInfoCircled className="text-[#396B31] text-sm cursor-pointer shadow-sm" onClick={() => { showProductDetails(product.id.concat(product.genericName)) }} />
                 </div>
-                <div className="min-h-[18vh]">
+                <div className="min-h-[25vh]">
                     <Suspense fallback={<Loader />}>
                         <img src={product.imageSrc} className="h-[100%] w-auto block m-auto" />
                     </Suspense>
@@ -58,9 +51,6 @@ export default function Product({ product }) {
                         </button>
                     </div>
                 </div>
-            </div>
-            <div className="absolute left-[50vw] right-auto opacity-0" id={product.id}>
-                <DisplayFullProductDetails productDetails={product} />
             </div>
         </>
     )

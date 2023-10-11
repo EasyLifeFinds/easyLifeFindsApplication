@@ -10,7 +10,6 @@ export default function ProductList() {
 
     let fireBaseData = useFireBaseDataContext()
 
-    const [fullProductDetails, setFullProductDetails] = useState({})
     const [fireBaseDataState, setFireBaseDataState] = useState([])
     const [localStorageData, updateLocalStorageData] = useLocalStorageDataContext()
 
@@ -32,6 +31,13 @@ export default function ProductList() {
         setFireBaseDataState(fireBaseDataFiltered)
     }
 
+    function showFullProductDetails(id) {
+        document.getElementById(id).classList.remove("hidden")
+    }
+
+    function closeFullProductDetailsContainer(id) {
+        document.getElementById(id).classList.add("hidden")
+    }
 
     return (
         <div>
@@ -45,22 +51,20 @@ export default function ProductList() {
             <div>
                 <ul className="grid md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-5 lg:gap-2 lg:m-2 ">
                     {
-                        fireBaseDataState.map(data => (<li key={data.id}> <Product product={data} /> </li>))
+                        fireBaseDataState.map(data =>
+                        (
+                            <li key={data.id.concat(data.genericName)}>
+                                <div className="">
+                                    <Product product={data} showProductDetails={showFullProductDetails} />
+                                </div>
+                                <div className="absolute left-[50vw] hidden" id={data.id.concat(data.genericName)} >
+                                    <DisplayFullProductDetails productDetails={data} closeProductDetails={closeFullProductDetailsContainer} />
+                                </div>
+                            </li>
+                        ))
                     }
                 </ul>
             </div>
-
-            {/* TO-DO  : displayFullProductDetails when tapped on button details. */}
-            {/* <div className="absolute ml-[43vw]">
-                <div className=" border m-1 max-w-[25vw]">
-                    <div className="text-xl bg-black text-whit p-2">
-                        Hello
-                    </div>
-                    <div>
-                        This is product description
-                    </div>
-                </div>
-            </div> */}
         </div>
     )
 }
