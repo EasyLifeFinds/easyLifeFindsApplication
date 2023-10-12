@@ -13,6 +13,8 @@ export default function ProductList() {
     const [fireBaseDataState, setFireBaseDataState] = useState([])
     const [localStorageData, updateLocalStorageData] = useLocalStorageDataContext()
 
+    let prevId;
+
     useEffect(() => {
         setFireBaseDataState(fireBaseData)
         let filteredArray = []
@@ -32,7 +34,15 @@ export default function ProductList() {
     }
 
     function showFullProductDetails(id) {
-        document.getElementById(id).classList.remove("hidden")
+        if (prevId === undefined) {
+            prevId = id
+            document.getElementById(id).classList.remove("hidden")
+        }
+        else {
+            document.getElementById(prevId).classList.add("hidden")
+            prevId = id
+            document.getElementById(id).classList.remove("hidden")
+        }
     }
 
     function closeFullProductDetailsContainer(id) {
@@ -57,7 +67,7 @@ export default function ProductList() {
                                 <div className="">
                                     <Product product={data} showProductDetails={showFullProductDetails} />
                                 </div>
-                                <div className="absolute left-[50vw] hidden" id={data.id.concat(data.genericName)} >
+                                <div className="absolute md:absolute md:left-[50vw] hidden" id={data.id.concat(data.genericName)} >
                                     <DisplayFullProductDetails productDetails={data} closeProductDetails={closeFullProductDetailsContainer} />
                                 </div>
                             </li>

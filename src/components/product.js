@@ -34,19 +34,19 @@ export default function Product({ product, showProductDetails }) {
                     <div className="font-medium text-xs">
                         {product.genericName}
                     </div>
-                    <div className="font-light text-[12px]">
+                    <div className="font-extralight text-[12px]">
                         {product.productName}
                     </div>
                     <div className="text-[10px] font-light">
                         Listed by {product.productLister}
                     </div>
-                    <div className="flex justify-around">
+                    <div className="flex justify-around text-[15px] md:text-md">
                         <button onClick={() => {
                             window.open(new URL(product.productLink), "_blank");
-                        }} className="bg-[#396B31] text-white w-20 md:w-16 py-1">
+                        }} className="bg-[#396B31] text-white  w-20 md:w-16 py-1">
                             buy
                         </button>
-                        <button className="rounded-none bg-slate-400 text-white w-20 md:w-16 py-1" ref={wishListButtonRef} onClick={() => { upDateUserWishList(product) }}>
+                        <button className="rounded-none bg-slate-400  text-white w-20 md:w-16 py-1" ref={wishListButtonRef} onClick={() => { upDateUserWishList(product) }}>
                             save
                         </button>
                     </div>
