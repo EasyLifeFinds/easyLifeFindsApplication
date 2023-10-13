@@ -17,9 +17,6 @@ export default function ListerProductList() {
     //     let listerProducts = fireBaseData.filter(ele => ele.productLister.toLowerCase() === location.state.listerTag)
     //     setListerProducts(listerProducts)
     // }, [])
-
-    console.log(listerProducts)
-
     function showFullProductDetails(id) {
         if (prevId === undefined) {
             prevId = id
@@ -38,8 +35,13 @@ export default function ListerProductList() {
     return (
         <div>
 
-            <div className="font-light text-[#396B31] mx-5 mt-2">
+            <div className="flex justify-between content-center align-middle font-light text-[#396B31]  mx-5 mt-2">
+                <div className="font-medium">
                 Products listed by {location.state.listerTag}
+                </div>
+                <div className="text-sm">
+                We Found {listerProducts.length } products.
+                </div>
             </div>
             <div>
                 <ul className="grid md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-5 lg:gap-2 lg:m-2 ">

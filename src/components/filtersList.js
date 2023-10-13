@@ -1,4 +1,4 @@
-import { FaChair, FaBaby, FaHouse, FaBath, FaBed, FaCarrot, FaCat, FaDesktop, FaFingerprint, FaGlasses, FaLeaf, FaPaintRoller, FaRotateLeft, FaCarSide } from "react-icons/fa6";
+import { FaChair, FaBaby, FaHouse, FaBath, FaBed, FaCarrot, FaCat, FaDesktop, FaFingerprint, FaGlasses, FaLeaf, FaPaintRoller, FaRotateLeft, FaCarSide, FaDrum } from "react-icons/fa6";
 
 export default function FiltersList(props) {
 
@@ -37,8 +37,8 @@ export default function FiltersList(props) {
            
             <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={5}>
                 <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
-                    <FaBaby className="text-lg" />
-                    Kids
+                    <FaDrum className="text-lg" />
+                    Fun
                 </div>
             </li>
             <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={11}>

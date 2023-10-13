@@ -29,7 +29,7 @@ export default function Product({ product, showProductDetails }) {
                 </div>
                 <div className="min-h-[25vh]">
                     <Suspense fallback={<Loader />}>
-                        <img src={product.imageSrc} className="h-[100%] w-auto block m-auto" />
+                        <img src={product.imageSrc} alt={product.genericName} className="h-[100%] w-auto block m-auto" />
                     </Suspense>
                 </div>
                 <div className="grid gap-1 m-1">
