@@ -36,7 +36,7 @@ export default function ListerProductList() {
         <div>
 
             <div className="flex justify-between content-center align-middle font-light text-[#396B31]  mx-5 mt-2">
-                <div className="font-medium">
+                <div className="">
                 Products listed by {location.state.listerTag}
                 </div>
                 <div className="text-sm">

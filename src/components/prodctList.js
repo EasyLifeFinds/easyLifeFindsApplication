@@ -57,6 +57,7 @@ export default function ProductList() {
                     There are {fireBaseDataState.length} products
                 </div>
             </div>
+            
             <WishListNavButton />
             <div>
                 <ul className="grid md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-5 lg:gap-2 lg:m-2 ">

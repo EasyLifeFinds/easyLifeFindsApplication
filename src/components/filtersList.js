@@ -34,7 +34,7 @@ export default function FiltersList(props) {
                     Home
                 </div>
             </li>
-           
+
             <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={5}>
                 <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                     <FaDrum className="text-lg" />

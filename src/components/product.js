@@ -41,14 +41,14 @@ export default function Product({ product, showProductDetails }) {
                     </div>
                     {
                         (location.pathname != "/listerProducts") &&
-                        <div className="flex text-[10px] font-medium">
+                        <div className="flex text-xs font-light">
                             Listed by :
-                            <div className="text-blue-500 cursor-pointer mx-1 underline" onClick={() => { navigate('listerProducts', { state: { listerTag: product.productLister.toLowerCase() } }) }}>
+                            <div className="text-blue-500  cursor-pointer mx-1 underline" onClick={() => { navigate('listerProducts', { state: { listerTag: product.productLister.toLowerCase() } }) }}>
                                 {product.productLister.toLowerCase()}
                             </div>
                         </div>
                     }
-                    <div className="flex justify-around text-[15px] md:text-md">
+                    <div className="flex justify-around text-[15px] md:text-md my-1">
                         <button onClick={() => {
                             window.open(new URL(product.productLink), "_blank");
                         }} className="bg-[rgb(57,107,49)] text-white  w-20 md:w-16 py-1">
