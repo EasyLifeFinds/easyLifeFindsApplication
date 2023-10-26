@@ -4,6 +4,7 @@ import { RxInfoCircled } from "react-icons/rx";
 import Loader from "./loader"
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom"
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Product({ product, showProductDetails }) {
 
@@ -14,6 +15,7 @@ export default function Product({ product, showProductDetails }) {
     let location = useLocation()
 
     function upDateUserWishList(obj) {
+        toast.success('Successfully created!');
         wishListButtonRef.current.classList.add("disabled:opacity-75")
         wishListButtonRef.current.setAttribute("disabled", "true")
         let tempLocalStorage = localStorageData
@@ -24,6 +26,7 @@ export default function Product({ product, showProductDetails }) {
     return (
         <>
             <div className="sm:text-xs p-2 border m-2 z-10">
+                <Toaster />
                 <div className="flex justify-end" >
                     <RxInfoCircled className="text-[#396B31] text-sm cursor-pointer shadow-sm" onClick={() => { showProductDetails(product.id.concat(product.genericName)) }} />
                 </div>
@@ -48,13 +51,13 @@ export default function Product({ product, showProductDetails }) {
                             </div>
                         </div>
                     }
-                    <div className="flex justify-around text-[15px] md:text-md my-1">
+                    <div className="flex justify-around text-[10px] sm:text-[15px] md:text-md my-1">
                         <button onClick={() => {
                             window.open(new URL(product.productLink), "_blank");
-                        }} className="bg-[rgb(57,107,49)] text-white  w-20 md:w-16 py-1">
+                        }} className="bg-[rgb(57,107,49)] text-white w-16 py-1">
                             buy
                         </button>
-                        <button className="rounded-none bg-slate-400  text-white w-20 md:w-16 py-1" ref={wishListButtonRef} onClick={() => { upDateUserWishList(product) }}>
+                        <button className="rounded-none bg-slate-400  text-white w-16 py-1" ref={wishListButtonRef} onClick={() => { upDateUserWishList(product) }}>
                             save
                         </button>
                     </div>

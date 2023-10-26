@@ -4,6 +4,7 @@ import Product from "./product";
 export default function UserWishList() {
 
     const [localStorageData, updateLocalStorageData] = useLocalStorageDataContext()
+    
 
     return <>
         <div className="flex justify-center m-2 font-light text-lg underline">

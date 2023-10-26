@@ -1,9 +1,9 @@
-import { FaChair, FaBaby, FaHouse, FaBath, FaBed, FaCarrot, FaCat, FaDesktop, FaFingerprint, FaGlasses, FaLeaf, FaPaintRoller, FaRotateLeft, FaCarSide, FaDrum } from "react-icons/fa6";
+import { FaHouse, FaBath, FaBed, FaCarrot, FaCat, FaDesktop, FaFingerprint, FaLeaf, FaPaintRoller, FaRotateLeft, FaCarSide, FaDrum } from "react-icons/fa6";
 
 export default function FiltersList(props) {
-
+    //grid grid-cols-3 md:grid-cols-5 lg:flex lg:flex-row gap-x-2 justify-center font-extralight text-xs py-4
     return (
-        <ul className="grid grid-cols-3 md:grid-cols-5 lg:flex lg:flex-row gap-x-2 justify-center font-extralight text-xs py-4">
+        <ul className="flex flex-row space-x-10 md:space-x-4 justify-center font-extralight text-xs my-5 overflow-x-scroll">
             <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={1}>
                 <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                     <FaCarrot className="text-lg" />

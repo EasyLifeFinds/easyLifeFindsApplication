@@ -60,7 +60,7 @@ export default function ProductList() {
             
             <WishListNavButton />
             <div>
-                <ul className="grid md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-5 lg:gap-2 lg:m-2 ">
+                <ul className="grid grid-cols-2 md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-5 lg:gap-2 lg:m-2 ">
                     {
                         fireBaseDataState.map(data =>
                         (
