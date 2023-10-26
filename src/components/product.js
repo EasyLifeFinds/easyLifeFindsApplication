@@ -23,6 +23,8 @@ export default function Product({ product, showProductDetails }) {
         updateLocalStorageData(tempLocalStorage)
     }
 
+    console.log(location.pathname === "/wishlist")
+
     return (
         <>
             <div className="sm:text-xs p-2 border m-2 z-10">
@@ -30,16 +32,16 @@ export default function Product({ product, showProductDetails }) {
                 <div className="flex justify-end" >
                     <RxInfoCircled className="text-[#396B31] text-sm cursor-pointer shadow-sm" onClick={() => { showProductDetails(product.id.concat(product.genericName)) }} />
                 </div>
-                <div className="min-h-[25vh]">
+                <div className="min-h-[10rem]">
                     <Suspense fallback={<Loader />}>
                         <img src={product.imageSrc} alt={product.genericName} className="h-[100%] w-auto block m-auto" />
                     </Suspense>
                 </div>
                 <div className="grid gap-1 m-1">
-                    <div className="font-medium text-xs">
+                    <div className="min-h-[2rem] font-medium text-xs">
                         {product.genericName}
                     </div>
-                    <div className="font-extralight text-[12px]">
+                    <div className="min-h-[2rem] font-extralight text-[12px]">
                         {product.productName}
                     </div>
                     {
@@ -51,15 +53,18 @@ export default function Product({ product, showProductDetails }) {
                             </div>
                         </div>
                     }
-                    <div className="flex justify-around text-[10px] sm:text-[15px] md:text-md my-1">
+                    <div className="flex justify-around text-[12px] sm:text-[15px] md:text-md my-1">
                         <button onClick={() => {
                             window.open(new URL(product.productLink), "_blank");
-                        }} className="bg-[rgb(57,107,49)] text-white w-16 py-1">
+                        }} className="bg-[rgb(57,107,49)] text-white px-4 py-1">
                             buy
                         </button>
-                        <button className="rounded-none bg-slate-400  text-white w-16 py-1" ref={wishListButtonRef} onClick={() => { upDateUserWishList(product) }}>
-                            save
-                        </button>
+                        {
+                            location.pathname !== "/wishlist" &&
+                            <button className="rounded-none bg-slate-400  text-white px-4 py-1" ref={wishListButtonRef} onClick={() => { upDateUserWishList(product) }}>
+                                save
+                            </button>
+                        }
                     </div>
                 </div>
             </div>

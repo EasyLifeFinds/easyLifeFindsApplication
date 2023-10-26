@@ -65,7 +65,7 @@ export default function ProductList() {
                         fireBaseDataState.map(data =>
                         (
                             <li key={data.id.concat(data.genericName)}>
-                                <div className="">
+                                <div>
                                     <Product product={data} showProductDetails={showFullProductDetails} />
                                 </div>
                                 <div className="absolute md:absolute md:left-[50vw] hidden" id={data.id.concat(data.genericName)} >
