@@ -23,8 +23,6 @@ export default function Product({ product, showProductDetails }) {
         updateLocalStorageData(tempLocalStorage)
     }
 
-    console.log(location.pathname === "/wishlist")
-
     return (
         <>
             <div className="sm:text-xs p-2 border m-2 z-10">

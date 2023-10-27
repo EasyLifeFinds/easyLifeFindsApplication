@@ -13,7 +13,7 @@ export default function AppHeader() {
     return (
         <div>
             <div className="flex align-middle justify-between  border-b p-5 shadow-md">
-                <button className="text-[#396B31] text-sm sm:font-light sm:text-2xl" onClick={() => { navigate('/') }}>
+                <button className="text-[#396B31] text-sm sm:font-light sm:text-lg md:text-2xl" onClick={() => { navigate('/') }}>
                     EasyLifeFinds
                 </button>
                 {/* <div>

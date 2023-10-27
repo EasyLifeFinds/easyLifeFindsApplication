@@ -24,7 +24,7 @@ export default function UserWishList() {
         document.getElementById(id).classList.add("hidden")
     }
     return <>
-        <div className="flex justify-center m-2 font-light text-lg underline">
+        <div className="flex justify-center m-2 font-light text-sm sm:text-lg underline">
             You have {localStorageData.length} products saved
         </div>
 

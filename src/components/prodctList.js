@@ -52,12 +52,11 @@ export default function ProductList() {
     return (
         <div>
             <FiltersList filterButton={filterButton} clearFilter={clearFilter} />
-            <div className="flex justify-end mx-2 font-light text-xs">
+            <div className="flex justify-end mx-2 font-light text-xs mt-[-0.8rem] sm:mt-0">
                 <div>
                     There are {fireBaseDataState.length} products
                 </div>
             </div>
-            
             <WishListNavButton />
             <div>
                 <ul className="grid grid-cols-2 md:grid-cols-3 md:m-1 md:gap-2 lg:grid-cols-5 lg:gap-2 lg:m-2 ">
