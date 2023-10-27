@@ -3,97 +3,117 @@ import ScrollFiltersList from "./scrollFilterAnimation"
 import { useRef } from "react";
 
 export default function FiltersList(props) {
-    //grid grid-cols-3 md:grid-cols-5 lg:flex lg:flex-row gap-x-2 justify-center font-extralight text-xs py-4
 
     let scrollIndicator = useRef(null)
 
     setTimeout(() => {
-        // console.log("Hello World!", scrollIndicator.current.classList);
         if (scrollIndicator.current !== null) {
             scrollIndicator.current.classList.add("hidden")
         }
-    }, 5000);
-
-    // console.log("-- >", scrollIndicator.current.classList)
+    }, 2500);
 
     return (
-        <div>
-            <ul className="flex flex-row space-x-5 justify-around font-extralight text-xs my-5 overflow-x-scroll">
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={1}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+        <div className="">
+            <ul className="grid grid-flow-col grid-cols-12 grid-rows-2 gap-y-4 md:grid-cols-min md:grid-rows-none justify-around font-extralight text-xs my-5 no-scrollbar">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto" onClick={props.filterButton} id={1}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaCarrot className="text-lg" />
-                        Kitchen
+                        <p className="hidden md:grid">
+                            Kitchen
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={6}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={6}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaFingerprint className="text-lg" />
-                        Electronics
+                        <p className="hidden md:grid">
+                            Electronics
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={7}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={7}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaBath className="text-lg" />
-                        Bathroom
+                        <p className="hidden md:grid">
+                            Bathroom
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={3}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={3}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaDesktop className="text-lg" />
-                        HomeOffice
+                        <p className="hidden md:grid">
+                            HomeOffice
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={12}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={12}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaHouse className="text-lg" />
-                        Home
+                        <p className="hidden md:grid">
+                            Home
+                        </p>
                     </div>
                 </li>
 
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={5}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={5}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaDrum className="text-lg" />
-                        Fun
+                        <p className="hidden md:grid">
+                            Fun
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={11}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={11}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaPaintRoller className="text-lg" />
-                        HardWare
+                        <p className="hidden md:grid">
+                            HardWare
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={8}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={8}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaCat className="text-lg" />
-                        Pets
+                        <p className="hidden md:grid">
+                            Pets
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={9}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={9}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaLeaf className="text-lg" />
-                        Seasonal
+                        <p className="hidden md:grid">
+                            Seasonal
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={2}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={2}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaBed className="text-lg" />
-                        Bedroom
+                        <p className="hidden md:grid">
+                            Bedroom
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.filterButton} id={10}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.filterButton} id={10}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaCarSide className="text-lg" />
-                        Auto
+                        <p className="hidden md:grid">
+                            Auto
+                        </p>
                     </div>
                 </li>
-                <li className="sm:min-w-[5vw] " onClick={props.clearFilter} id={10}>
-                    <div className="grid justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer ">
+                <li className="sm:min-w-[5vw] col-span-2 md:col-auto " onClick={props.clearFilter} id={10}>
+                    <div className="grid  justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer ">
                         <FaRotateLeft className="text-lg" />
-                        Clear
+                        <p className="hidden md:grid">
+                            Clear
+                        </p>
                     </div>
                 </li>
             </ul>
-            <div ref={scrollIndicator}>
+            <div ref={scrollIndicator} className="absolute">
                 <ScrollFiltersList />
             </div>
         </div>

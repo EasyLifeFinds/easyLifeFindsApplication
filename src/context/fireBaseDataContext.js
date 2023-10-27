@@ -25,6 +25,13 @@ export function FireBaseDataContextProvider({ children }) {
         setFireStoreDataFromFireStore()
     }, [])
 
+    useEffect(() => {
+        console.log(" fireStoreData in Context use Effect")
+        fireStoreData.forEach((ele) => console.log(ele.imageSrc.includes("amazoinfinds-20")))
+        let notStore = fireStoreData.filter((ele) => !ele.imageSrc.includes("amazoinfinds-20"))
+        console.log(notStore)
+    }, [fireStoreData])
+
     return (
         <FireBaseDataContext.Provider value={fireStoreData}>
             {children}

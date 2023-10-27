@@ -5,15 +5,15 @@ module.exports = {
   ],
   theme: {
     animation: {
-      wiggle: 'wiggle 1s ease-in-out infinite',
+      wiggleOne: 'wiggleOne 1s ease-in-out infinite',
     },
     extend: {
       keyframes: {
-        wiggle: {
+        wiggleOne: {
           '0%': { opacity: '0' },
-          '25%':{opacity:'1'},
-          '50%': { opacity: '.5' },
-          '75%': { opacity: '1' },
+          '25%':{opacity:'.5'},
+          '50%': { opacity: '1' },
+          '75%': { opacity: '.5' },
           '100%': { opacity: '0'}
         }
       }
