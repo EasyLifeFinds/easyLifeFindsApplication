@@ -3,7 +3,7 @@ import { collection, setDoc, doc } from "firebase/firestore";
 import { db } from "../data/Data"
 
 
-export default function SellerSignUpForm() {
+export default function NewsLetterSignUpForm({newsLetterFormRef}) {
 
     const name = [
         "dwayne johnson",
@@ -30,7 +30,7 @@ export default function SellerSignUpForm() {
         )
             .then((suc) => {
                 alert("Success")
-                document.getElementById("listerSignupForm").classList.add("hidden")
+                newsLetterFormRef.current.classList.add("hidden")
                 return true
             })
             .catch((err) => {
@@ -45,7 +45,9 @@ export default function SellerSignUpForm() {
 
     function closeSignUpForm(ev) {
         ev.preventDefault()
-        document.getElementById("listerSignupForm").classList.add("hidden")
+        if (newsLetterFormRef.current !== null && newsLetterFormRef.current !== undefined) {
+            newsLetterFormRef.current.classList.add("hidden")
+        }
     }
 
     function sellerSignUpFormSubmitted(ev) {
