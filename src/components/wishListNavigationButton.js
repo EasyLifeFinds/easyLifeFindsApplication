@@ -5,12 +5,10 @@ export default function WishListNavButton() {
     const navigate = useNavigate()
 
     return (
-        <div>
-            <div className="block sm:hidden bg-[#396B31] px-4 py-1 mx-1 rounded-lg hover:-translate-y-1 fixed bottom-5 right-5">
+            <div className="fixed flex justify-center sm:hidden bg-[#396B31] min-w-[4rem] py-1 rounded-lg hover:-translate-y-1 bottom-5 left-auto right-5">
                 <button onClick={() => { navigate('wishlist') }}>
-                    <LiaBookmark className="text-lg lg:text-3xl text-white" />
+                    <LiaBookmark className="text-xl text-white" />
                 </button>
             </div>
-        </div>
     )
 }

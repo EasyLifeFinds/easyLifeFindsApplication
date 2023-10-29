@@ -28,7 +28,7 @@ export default function Product({ product, showProductDetails }) {
             <div className="sm:text-xs p-2 border m-2 z-10">
                 <Toaster />
                 <div className="flex justify-end" >
-                    <RxInfoCircled className="text-[#396B31] text-sm cursor-pointer shadow-sm" onClick={() => { showProductDetails(product.id.concat(product.genericName)) }} />
+                    <RxInfoCircled className="text-[#396B31] text-md font-semibold cursor-pointer shadow-sm" onClick={() => { showProductDetails(product.id.concat(product.genericName)) }} />
                 </div>
                 <div className="min-h-[10rem]">
                     <Suspense fallback={<Loader />}>
@@ -36,15 +36,15 @@ export default function Product({ product, showProductDetails }) {
                     </Suspense>
                 </div>
                 <div className="grid gap-1 m-1">
-                    <div className="min-h-[1rem] font-medium text-xs">
+                    <div className="min-h-[1rem] font-medium text-[12px] md:text-xs">
                         {product.genericName}
                     </div>
-                    <div className="min-h-[2.2rem] font-extralight text-[12px]">
+                    <div className="min-h-[2.2rem] font-extralight text-[11px]">
                         {product.productName}
                     </div>
                     {
                         (location.pathname != "/listerProducts") &&
-                        <div className="flex text-xs font-light">
+                        <div className="flex text-[12px] md:text-xs font-light">
                             Listed by :
                             <div className="text-blue-500  cursor-pointer mx-1 underline" onClick={() => { navigate('listerProducts', { state: { listerTag: product.productLister.toLowerCase() } }) }}>
                                 {product.productLister.toLowerCase()}
