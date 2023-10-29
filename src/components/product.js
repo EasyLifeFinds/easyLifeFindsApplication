@@ -36,10 +36,10 @@ export default function Product({ product, showProductDetails }) {
                     </Suspense>
                 </div>
                 <div className="grid gap-1 m-1">
-                    <div className="min-h-[2rem] font-medium text-xs">
+                    <div className="min-h-[1rem] font-medium text-xs">
                         {product.genericName}
                     </div>
-                    <div className="min-h-[2rem] font-extralight text-[12px]">
+                    <div className="min-h-[2.2rem] font-extralight text-[12px]">
                         {product.productName}
                     </div>
                     {

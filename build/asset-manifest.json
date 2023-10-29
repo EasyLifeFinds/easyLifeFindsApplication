@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.86cac5a7.css",
+    "main.js": "/static/js/main.ba0cbdf8.js",
+    "static/js/787.9d23a2db.chunk.js": "/static/js/787.9d23a2db.chunk.js",
+    "static/media/canadaflag.avif": "/static/media/canadaflag.0aeb563e9805c2759f09.avif",
+    "index.html": "/index.html",
+    "main.86cac5a7.css.map": "/static/css/main.86cac5a7.css.map",
+    "main.ba0cbdf8.js.map": "/static/js/main.ba0cbdf8.js.map",
+    "787.9d23a2db.chunk.js.map": "/static/js/787.9d23a2db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86cac5a7.css",
+    "static/js/main.ba0cbdf8.js"
+  ]
+}

@@ -17,12 +17,12 @@ export default function AppHeader() {
 
     return (
         <div>
-            <div className="flex align-middle justify-between  border-b p-5 shadow-md">
+            <div className="flex align-middle justify-between border-b p-5 shadow-md">
                 <button className="text-[#396B31] text-sm sm:font-light sm:text-lg md:text-2xl" onClick={() => { navigate('/') }}>
                     EasyLifeFinds
                 </button>
                 <div className=" flex items-center gap-x-2">
-                    <div className=" text-[12px] sm:text-sm sm:flex text-[#396B31] border border-[#396B31] rounded-full hover:cursor-pointer hover:text-white hover:bg-[#396B31] px-1 sm:px-2" onClick={() => navigate('wishlist')}>
+                    <div className="hidden md:block text-[12px] sm:text-sm sm:flex text-[#396B31] border border-[#396B31] rounded-full hover:cursor-pointer hover:text-white hover:bg-[#396B31] px-1 sm:px-2" onClick={() => navigate('wishlist')}>
                         wish list
                     </div>
                     <div className=" text-[12px] sm:text-sm sm:flex text-[#396B31] border border-[#396B31] rounded-full hover:cursor-pointer hover:text-white hover:bg-[#396B31] px-1 sm:px-2" onClick={showSignUpForListerForm}>

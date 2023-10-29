@@ -14,7 +14,7 @@ export default function FiltersList(props) {
 
     return (
         <div>
-            <ul className="flex space-x-5 md:justify-center font-light text-xs my-5 overflow-x-scroll px-2 no-scrollbar">
+            <ul className="flex space-x-8 md:space-x-5 md:justify-center font-light text-xs my-5 overflow-x-scroll px-2 no-scrollbar">
                 <li className="min-w-[1rem] sm:min-w-[5vw] " onClick={props.filterButton} id={1}>
                     <div className="md:grid  md:justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaCarrot className="text-lg" />

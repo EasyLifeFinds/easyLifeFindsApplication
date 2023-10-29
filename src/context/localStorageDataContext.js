@@ -10,7 +10,6 @@ export function LocalStorageDataContextProvider({ children }) {
 
     const [localStorageData, setLocalStorageData] = useState(() => {
         if (localStorage.getItem('EasyLifeFindsUserWishListDataBase') === null) {
-            console.log("LocalStorage is Null")
             localStorage.setItem('EasyLifeFindsUserWishListDataBase', JSON.stringify([]))
         }
         return JSON.parse(localStorage.getItem('EasyLifeFindsUserWishListDataBase'))
