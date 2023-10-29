@@ -35,7 +35,7 @@ export default function FiltersList(props) {
                     <div className="md:grid  md:justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaBath className="text-lg" />
                         <p className="hidden md:grid">
-                            Bathroom
+                            Shower
                         </p>
                     </div>
                 </li>
@@ -43,7 +43,7 @@ export default function FiltersList(props) {
                     <div className="md:grid  md:justify-items-center text-slate-500 hover:text-slate-950 cursor-pointer">
                         <FaDesktop className="text-lg" />
                         <p className="hidden md:grid">
-                            HomeOffice
+                            Office
                         </p>
                     </div>
                 </li>
