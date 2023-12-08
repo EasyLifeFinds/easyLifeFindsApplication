@@ -7,6 +7,8 @@ export default function AppHeader() {
     const navigate = useNavigate()
 
     let signUpFormRef = useRef(null)
+    let contactFormRef = useRef(null)
+
 
     function showSignUpForListerForm(ev) {
         ev.preventDefault()
@@ -14,6 +16,13 @@ export default function AppHeader() {
             signUpFormRef.current.classList.remove("hidden")
         }
     }
+    function showContactForm(ev) {
+        ev.preventDefault()
+        if (contactFormRef.current !== null || contactFormRef.current !== undefined) {
+            contactFormRef.current.classList.remove("hidden")
+        }
+    }
+
 
     return (
         <div>
@@ -28,6 +37,9 @@ export default function AppHeader() {
                     <div className=" text-[12px] sm:text-sm sm:flex text-[#396B31] border border-[#396B31] rounded-full hover:cursor-pointer hover:text-white hover:bg-[#396B31] px-1 sm:px-2" onClick={showSignUpForListerForm}>
                         news letter
                     </div>
+                    <div className=" text-[12px] sm:text-sm sm:flex text-[#396B31] border border-[#396B31] rounded-full hover:cursor-pointer hover:text-white hover:bg-[#396B31] px-1 sm:px-2" onClick={showContactForm}>
+                       Contact
+                    </div>
                     <div className=" sm:flex rounded-full w-6 sm:w-9 h-auto">
                         <img src={require("../images/canadaflag.avif")} />
                     </div>
@@ -35,6 +47,9 @@ export default function AppHeader() {
             </div>
             <div ref={signUpFormRef} className="absolute z-50 ml-[50vw] mt-[5vh] bg-[#fff] p-5 -translate-x-2/4 border border-[#396B31] rounded-sm shadow-md hidden">
                 <NewsLetterSignUpForm newsLetterFormRef={signUpFormRef} />
+            </div>
+            <div ref={contactFormRef} className="absolute z-50 ml-[50vw] mt-[5vh] bg-[#fff] p-5 -translate-x-2/4 border border-[#396B31] rounded-sm shadow-md hidden">
+                <NewsLetterSignUpForm newsLetterFormRef={contactFormRef} />
             </div>
         </div>
     )
