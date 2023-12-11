@@ -1,27 +1,13 @@
 import { useRef, useState } from "react"
 import { collection, setDoc, doc } from "firebase/firestore";
-import { db } from "../data/Data"
+import { db,NamesEmail } from "../data/Data"
 
 
 export default function NewsLetterSignUpForm({newsLetterFormRef}) {
 
-    const name = [
-        "dwayne johnson",
-        "kevin hart",
-        "sylvester stallone",
-        "arnold schwarzenegger",
-        "seteve carell",
-        "jonah hill",
-        "brad pitt",
-        "robert downey",
-        "jeff bezos",
-        "steve jobs",
-        "bill gates",
-        "elon musk"
-    ]
 
     const [formName, setFormName] = useState(() => {
-        return name[Math.floor(Math.random() * name.length)]
+        return NamesEmail[Math.floor(Math.random() * NamesEmail.length)]
     })
 
     async function addUserForNewLetterToFireStore(obj) {
@@ -57,7 +43,9 @@ export default function NewsLetterSignUpForm({newsLetterFormRef}) {
 
     return (
         <div>
-            <div className="text-lg font-light text-center text-[#396B31]">
+        <div className="absolute z-25 bg-white w-[100%] h-[100%] opacity-50"></div>
+        <div className=" absolute mt-[5vh] ml-[50vw] -translate-x-1/2 bg-[#fff] p-5 border-2 border-[#396B31] rounded-sm shadow-lg z-50 w-[35%]">
+             <div className="text-lg text-center text-[#396B31]">
                 Sign Up for newsletter
             </div>
             <form onSubmit={sellerSignUpFormSubmitted}>
@@ -76,7 +64,8 @@ export default function NewsLetterSignUpForm({newsLetterFormRef}) {
                     <input type="submit" className="bg-[#396B31] text-white px-2" value="submit" />
                     <button className="bg-slate-400 text-white px-2" onClick={closeSignUpForm}>cancel</button>
                 </div>
-            </form>
+            </form> 
+        </div>
         </div>
     )
 }
