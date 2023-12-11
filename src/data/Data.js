@@ -10,7 +10,20 @@ const Data = [
     { id: 5, name: "Water bottle", frameLink: "", description: "best quality Water", department: 5 },
     { id: 6, name: "Soap", frameLink: "", description: "best quality soap", department: 6 },
 ]
-
+const NamesEmail = [
+    "dwayne johnson",
+    "kevin hart",
+    "sylvester stallone",
+    "arnold schwarzenegger",
+    "seteve carell",
+    "jonah hill",
+    "brad pitt",
+    "robert downey",
+    "jeff bezos",
+    "steve jobs",
+    "bill gates",
+    "elon musk"
+]
 const fireBaseConfiguration = {
         apiKey: "AIzaSyB5WWDj2bHY-IK8TKbpTOZpxRwn1AY8Bvs",
         authDomain: "amazinfinds-4a0c0.firebaseapp.com",
@@ -23,8 +36,4 @@ const fireBaseConfiguration = {
 const app = initializeApp(fireBaseConfiguration)
 const db = getFirestore(app)
 
-export {Data,db}
-
-
-
-
+export {Data,db,NamesEmail}
